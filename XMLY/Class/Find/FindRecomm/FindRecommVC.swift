@@ -55,13 +55,11 @@ class FindRecommVC: UIViewController {
     
 }
 
-extension FindRecommVC:UITableViewDelegate {
+extension FindRecommVC:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.heightForRowAt(indexPath: indexPath)
     }
-}
-
-extension FindRecommVC:UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection(section: section)
     }
@@ -71,4 +69,5 @@ extension FindRecommVC:UITableViewDataSource {
         cell.streamModel = viewModel.streamList?[indexPath.row]
         return cell
     }
+    
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class FindRecommendViewModel: NSObject {
+    
     var findRecommendModel:FindRecommendModel?
     var streamList:[FindRStreamList]?
     // Mark: -数据源更新
@@ -54,7 +55,6 @@ extension FindRecommendViewModel {
         let textHeight:CGFloat = height(for: self.streamList?[indexPath.row])
         return 60+50+picHeight+textHeight
     }
-    
     
     func height(for commentModel: FindRStreamList?) -> CGFloat {
         var height: CGFloat = 44
